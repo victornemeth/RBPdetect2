@@ -2,3 +2,4 @@ raw_input/
 results/
 all_genbank_proteins.fasta
 all_uniprot_proteins.fasta
+testing/
