@@ -1,89 +1,73 @@
 # inference.py
 
 import argparse
+import itertools
+import math
 from pathlib import Path
 import torch
 import pandas as pd
 from Bio import SeqIO
+from tqdm import tqdm
 from transformers import AutoTokenizer, EsmForSequenceClassification
 
-# Define a default batch size. Adjust based on your GPU VRAM.
-BATCH_SIZE = 16
-
-def batch_predict(sequences: list, model, tokenizer, device: torch.device):
+def batch_generator(iterator, batch_size):
     """
-    Predicts classes and probabilities for a batch of protein sequences.
-
-    Args:
-        sequences (list): A list of protein sequences (strings).
-        model: The loaded ESM-2 model.
-        tokenizer: The loaded ESM-2 tokenizer.
-        device (torch.device): The device (CPU or GPU) to run inference on.
-
-    Returns:
-        list: A list of dictionaries, where each dict contains:
-              'predicted_label', 'probability', and 'sequence'.
+    Creates batches from an iterator without loading the whole thing into memory.
+    
+    This is a memory-efficient way to handle large iterables (like a FASTA file).
     """
+    while True:
+        # Use itertools.islice to grab a chunk of the iterator
+        batch = list(itertools.islice(iterator, batch_size))
+        if not batch:
+            # The iterator is exhausted, stop.
+            return
+        yield batch
+
+def predict_and_format_batch(batch_records, model, tokenizer, device):
+    """
+    Takes a batch of Bio.SeqRecord objects, predicts, and returns a formatted DataFrame.
+    """
+    # Extract sequences and IDs from the BioPython records
+    sequences = [str(r.seq) for r in batch_records]
+    protein_ids = [r.id for r in batch_records]
+
     # Tokenize the entire batch
-    # padding=True ensures all sequences in the batch are padded to the longest sequence length
     inputs = tokenizer(sequences, return_tensors="pt", truncation=True, padding=True)
     inputs = {key: val.to(device) for key, val in inputs.items()}
 
+    # Perform inference
     model.eval()
     with torch.no_grad():
         outputs = model(**inputs)
         logits = outputs.logits
 
-    # Apply softmax to convert logits to probabilities
     probabilities = torch.nn.functional.softmax(logits, dim=-1)
-
-    # Get the top prediction for each sequence in the batch
     predicted_class_ids = logits.argmax(dim=1)
     
+    # Format results for this batch
     results = []
     for i in range(len(sequences)):
-        sequence = sequences[i]
         predicted_id = predicted_class_ids[i].item()
-        predicted_label = model.config.id2label[predicted_id]
-        probability = probabilities[i, predicted_id].item()
-
         results.append({
-            "predicted_label": predicted_label,
-            "probability": probability,
-            "sequence": sequence
+            "protein_id": protein_ids[i],
+            "predicted_label": model.config.id2label[predicted_id],
+            "probability": probabilities[i, predicted_id].item(),
+            "sequence": sequences[i]
         })
-
-    return results
+        
+    return pd.DataFrame(results)
 
 def main():
     """Main function to run the inference script."""
     parser = argparse.ArgumentParser(
-        description="Predict protein class using a fine-tuned ESM-2 model. "
-                    "Supports batched inference for FASTA files."
+        description="Memory-efficiently predict protein class using a fine-tuned ESM-2 model."
     )
-    parser.add_argument(
-        "model_path",
-        type=str,
-        help="Path to the saved model directory.",
-    )
-    parser.add_argument(
-        "input_data",
-        type=str,
-        help="A single protein sequence or the path to a FASTA file.",
-    )
-    parser.add_argument(
-        "-o", "--output_file",
-        type=str,
-        default="predictions.tsv",
-        help="Path to save the output TSV file (only used for FASTA input).",
-    )
-    parser.add_argument(
-        "-b", "--batch_size",
-        type=int,
-        default=BATCH_SIZE,
-        help=f"Batch size for FASTA file processing (default: {BATCH_SIZE}).",
-    )
-    
+    # ... (parser arguments remain the same) ...
+    parser.add_argument("model_path",type=str,help="Path to the saved model directory.")
+    parser.add_argument("input_data", type=str, help="A single protein sequence or the path to a FASTA file.")
+    parser.add_argument("-o", "--output_file", type=str, default="predictions.tsv", help="Path to save the output TSV file (only used for FASTA input).")
+    parser.add_argument("-b", "--batch_size", type=int, default=16, help="Batch size for FASTA file processing (default: 16).")
     args = parser.parse_args()
 
     # --- 1. Setup Model and Device ---
@@ -108,50 +92,55 @@ def main():
     input_path = Path(args.input_data)
 
     if input_path.is_file():
-        # --- FASTA File Input (Batched) ---
-        print(f"Processing FASTA file: {input_path} with batch size {args.batch_size}")
+        # --- FASTA File Streaming Pipeline ---
+        print("Counting records in FASTA file (for progress bar)...")
+        with open(input_path, 'r') as f:
+            num_records = sum(1 for line in f if line.startswith('>'))
         
-        all_records = list(SeqIO.parse(input_path, "fasta"))
-        num_records = len(all_records)
-        all_results = []
+        print(f"Found {num_records} records. Processing with batch size {args.batch_size}...")
+
+        # Create the stream iterator from the FASTA file
+        record_iterator = SeqIO.parse(input_path, "fasta")
         
-        for i in range(0, num_records, args.batch_size):
-            batch_records = all_records[i:i + args.batch_size]
-            batch_sequences = [str(r.seq) for r in batch_records]
-            batch_ids = [r.id for r in batch_records]
-
-            # Get predictions for the entire batch
-            batch_predictions = batch_predict(batch_sequences, model, tokenizer, device)
+        # Create our memory-efficient batch generator
+        batch_gen = batch_generator(record_iterator, args.batch_size)
+        
+        # Calculate the number of batches for tqdm
+        total_batches = math.ceil(num_records / args.batch_size)
+        
+        # Open output file and write header first
+        output_df = pd.DataFrame(columns=["protein_id", "predicted_label", "probability", "sequence"])
+        output_df.to_csv(args.output_file, sep='\t', index=False)
+        
+        # Process batches from the generator
+        for batch_records in tqdm(batch_gen, total=total_batches, desc="Predicting", unit="batch"):
+            # Get predictions for the current batch as a DataFrame
+            results_df = predict_and_format_batch(batch_records, model, tokenizer, device)
             
-            # Combine IDs and predictions
-            for j in range(len(batch_predictions)):
-                batch_predictions[j]["protein_id"] = batch_ids[j]
+            # Append batch results to the TSV file without keeping them in memory
+            results_df.to_csv(
+                args.output_file, 
+                sep='\t', 
+                index=False, 
+                mode='a', # 'a' for append
+                header=False # Do not write header again
+            )
             
-            all_results.extend(batch_predictions)
-
-            print(f"Processed {min(i + args.batch_size, num_records)}/{num_records} records.")
-
-        # Reorder and format columns for the final TSV
-        results_df = pd.DataFrame(all_results)
-        results_df = results_df[["protein_id", "predicted_label", "probability", "sequence"]]
-        results_df["probability"] = results_df["probability"].apply(lambda x: f"{x:.4f}")
-
-        results_df.to_csv(args.output_file, sep='\t', index=False)
-        print(f"Predictions saved to {args.output_file}")
+        print(f"\nPredictions saved to {args.output_file}")
             
     else:
-        # --- Single Sequence Input (Non-batched) ---
+        # --- Single Sequence Input (unchanged) ---
         print("Processing single sequence...")
         sequence = args.input_data
         
-        # Predict a single sequence (we still use batch_predict, just with a batch size of 1)
-        results = batch_predict([sequence], model, tokenizer, device)[0]
-        
+        # We can reuse the batch prediction function for a single item
+        results_df = predict_and_format_batch([SeqIO.SeqRecord(seq=sequence, id="input_seq")], model, tokenizer, device)
+        result = results_df.iloc[0]
+
         print("\n--- Prediction Result ---")
         print(f"Sequence:         {sequence[:60]}...")
-        print(f"Predicted Label:  {results['predicted_label']}")
-        print(f"Probability:      {results['probability']:.4f}")
-
+        print(f"Predicted Label:  {result['predicted_label']}")
+        print(f"Probability:      {result['probability']:.4f}")
 
 if __name__ == "__main__":
     main()
