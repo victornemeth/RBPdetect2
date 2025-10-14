@@ -3,6 +3,5 @@ results/
 all_genbank_proteins.fasta
 all_uniprot_proteins.fasta
 testing/
-final_esm2_classifier/
 input/
 *.tsv
