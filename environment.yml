@@ -1,4 +1,4 @@
-name: esm2classifier
+name: rbpdetect2
 channels:
   - conda-forge
   - nodefaults

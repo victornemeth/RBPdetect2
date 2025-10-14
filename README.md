@@ -40,7 +40,8 @@ Clone the repository and install dependencies:
 ```bash
 git clone https://github.com/victornemeth/RBPdetect2.git
 cd RBPdetect2
-pip install -r requirements.txt
+conda env create -f environment.yml
+conda activate rbpdetect2
 ```
 
 ## Quick Start
