@@ -60,8 +60,6 @@ def predict_and_format_batch(batch_records, model, tokenizer, device, max_length
         # Add a note if the sequence was truncated
         original_len = len(sequences[i])
         protein_id_note = protein_ids[i]
-        if original_len > max_length:
-            protein_id_note = f"{protein_ids[i]}_truncated_from_{original_len}"
 
         results.append({
             "protein_id": protein_id_note,
