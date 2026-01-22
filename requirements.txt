@@ -1,0 +1,19 @@
+# Core ML/DL dependencies
+torch>=2.0.0
+transformers>=4.30.0
+
+# Data processing
+biopython>=1.80
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Training dependencies (train.ipynb)
+scikit-learn>=1.2.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Utilities
+tqdm>=4.65.0
+
+# Optional: accelerate for faster training (uncomment if needed)
+# accelerate>=0.20.0
