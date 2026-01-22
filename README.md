@@ -56,11 +56,20 @@ python inference_parallel.py ./final_esm2_classifier sequences.fasta -o output.t
 
 - `-b`: Batch size (default: 64)
 
-## Optional: Clean Protein IDs
-If your protein IDs contain ``_truncated_from_`` annotations, you can remove them with:
-```bash
-awk 'BEGIN{FS=OFS="\t"} {sub(/_truncated_from_.*/, "", $1); print}' output.tsv > output.cleaned.tsv
-```
+## Benchmark
+
+| Method                     | F1 score | MCC score | Sensitivity | Specificity |
+| -------------------------- | -------- | --------- | ----------- | ----------- |
+| RBP domains (HMMs)         | 72.0%    | 70.2%     | 66.4%       | 98.5%       |
+| PhANNs                     | 69.8%    | 67.9%     | 81.6%       | 95.8%       |
+| ProtTransBert+XGBoost      | 84.0%    | 82.3%     | 91.6%       | 97.9%       |
+| ProtTransBert+HMMs+XGBoost | 84.8%    | 83.8%     | 92.2%       | 98.0%       |
+| ESM-2 + XGBoost            | 85.0%    | 83.9%     | 90.9%       | 98.1%       |
+| RBPdetect (T33)      | 86.4%    | 85.4%     | 91.6%       | 98.4%       |
+| RBPdetect Finetuned 2025       | 91.7%    | 90.3%     | 93.8%       | 98.1%       |
+| RBPdetect2                 | 98.8%    | 94.4%     | 97.1%       | 98.4%       |
+
+
 ## Citation
 Comming soon
 
