@@ -14,6 +14,11 @@ A **fast**, **easy-to-use** tool for identifying phage **receptor binding protei
 </div>
 
 ---
+ 
+## Easiest way to get started
+
+I have provided a Google Colab Notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victornemeth/RBPdetect2/blob/main/RBPdetect2_streamlined.ipynb), where you can upload your genome/protein fasta and use the RBPdetect2 tools to classify RBPs. Simply follow the instructions on the Colab page.
+
 
 ## Overview
 
@@ -43,7 +48,6 @@ Run RBP classification on a FASTA file:
 
 ```bash
 python inference_parallel.py ./final_esm2_classifier sequences.fasta -o output.tsv -b 64
-
 ```
 - `-o`: Output file path (.tsv)
 
