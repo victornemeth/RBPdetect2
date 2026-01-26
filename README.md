@@ -25,15 +25,6 @@ A **fast**, **easy-to-use** tool for identifying phage **receptor binding protei
 
 ---
 
-## Features
-
-- **Fast**: Parallelized batch processing
-- **Accurate**: Powered by ESM2 protein language models
-- **Simple**: Single-command execution
-- **Flexible**: Works with standard FASTA files
-
----
-
 ## Installation
 
 Clone the repository and install dependencies:
