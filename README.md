@@ -1,4 +1,6 @@
-[![Open In Colab]([https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victornemeth/RBPdetect2/blob/main/RBPdetect2_streamlined.ipynb)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victornemeth/RBPdetect2/blob/main/RBPdetect2_streamlined.ipynb)
+
 <div align="center">
 
 # RBPdetect2
