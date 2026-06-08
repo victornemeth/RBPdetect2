@@ -8,6 +8,11 @@ each one of three classes:
 - **TSP** — Tail Spike Protein
 - **nonRBP** — anything else
 
+RBPdetect2 is the **first tool to perform ternary RBP classification**
+(TF / TSP / nonRBP), rather than the binary RBP-vs-not call of tools like
+RBPdetect — it not only detects RBPs but distinguishes tail fibers from tail
+spikes.
+
 ## How it works
 
 Frozen **ESM2-650M** protein language model → mean-pooled residue embeddings
@@ -17,14 +22,30 @@ cheap to retrain. Training uses a **cluster-aware split** (MMseqs2 @ 30%
 identity) so no cluster is shared across train/val/test, and class-balanced loss
 to handle imbalance.
 
+We also benchmarked larger and structure-aware language models (**ESMC-6B** and
+**SaProt**) as the embedding backbone. They gave very similar classification
+performance, so we chose ESM2-650M — the simplest, lightest, sequence-only
+model that needs no structures.
+
 ## Getting started
 
-Requires [uv](https://docs.astral.sh/uv/). A CUDA GPU is recommended (ESM2-650M
-in bf16 needs ~2.5 GB VRAM); CPU works but is slow. ESM2 weights download
-automatically from Hugging Face (public, no login).
+A CUDA GPU is recommended (ESM2-650M in bf16 needs ~2.5 GB VRAM); CPU works but
+is slow. ESM2 weights download automatically from Hugging Face (public, no
+login).
+
+Install [uv](https://docs.astral.sh/uv/) if you don't have it:
 
 ```bash
-uv sync                      # create the environment
+curl -LsSf https://astral.sh/uv/install.sh | sh        # macOS / Linux
+# Windows (PowerShell): irm https://astral.sh/uv/install.ps1 | iex
+```
+
+Clone the repo and create the environment:
+
+```bash
+git clone https://github.com/victornemeth/RBPdetect2.git
+cd RBPdetect2
+uv sync                      # creates .venv and installs dependencies
 ```
 
 ### Predict
@@ -71,7 +92,6 @@ genomes deposited after the training cutoff) and **experimental**
 | PhageRBPdetect v4 (Boeckaerts 2024) | 0.802 | 0.864 |
 | Phold (Bouras 2024) | 0.789 | 0.632 |
 | Pharokka (Bouras 2023) | 0.790 | 0.609 |
-| RBPdetect2 (previous) | 0.528 | 0.802 |
 
 RBPdetect2 is competitive with the best general tools on inphared and the
 strongest on the experimental set. Because benchmark proteins can overlap the
