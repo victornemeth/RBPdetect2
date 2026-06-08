@@ -9,10 +9,12 @@ plotting/exploration). Steps:
   3. Extract & cache ESM2 embeddings
   4. Train a linear classifier with class-balanced loss
   5. Evaluate on the held-out test set
-  6. Save the checkpoint (consumed by scripts/predict_cli.py)
+  6. Save the checkpoint (consumed by rbpdetect2.predict)
 
-Example:
-    python scripts/train_classifier.py --epochs 50
+Run via the console script:
+    uv run rbpdetect2-train --epochs 50
+or as a module:
+    uv run python -m rbpdetect2.train --epochs 50
 """
 
 import argparse
@@ -30,9 +32,10 @@ from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.utils.class_weight import compute_class_weight
 from torch.utils.data import DataLoader, TensorDataset
 
+from rbpdetect2.model import LinearClassifier
 from rbpdetect2.plm_embed import embed_sequences, load_plm, select_device, select_dtype
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 
 LABEL2ID = {"nonRBP": 0, "TF": 1, "TSP": 2}
 ID2LABEL = {v: k for k, v in LABEL2ID.items()}
@@ -116,15 +119,6 @@ def cluster_aware_split(
 
     df["split"] = df["cluster"].map(assign)
     return df
-
-
-class LinearClassifier(nn.Module):
-    def __init__(self, in_dim: int, n_classes: int):
-        super().__init__()
-        self.head = nn.Linear(in_dim, n_classes)
-
-    def forward(self, x):
-        return self.head(x)
 
 
 def run_epoch(loader, model, criterion, device, optimizer=None):

@@ -46,6 +46,10 @@ esmc = [
 [tool.uv]
 default-groups = []
 
+[project.scripts]
+rbpdetect2-train = "rbpdetect2.train:main"
+rbpdetect2-predict = "rbpdetect2.predict:main"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.2",

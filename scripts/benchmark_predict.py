@@ -8,7 +8,7 @@ Writes a prediction TSV in the exact format benchmark/score.py expects:
 Our model is a frozen-ESM2 + separate linear head (.pt), not a single HF
 EsmForSequenceClassification, so benchmark/run_classifier.py can't load it —
 this is the drop-in equivalent. Embeddings use the same pooling as training
-(scripts/train_classifier.py / src/rbpdetect2/plm_embed.py).
+(src/rbpdetect2/train.py / src/rbpdetect2/plm_embed.py).
 
 Example:
     python scripts/benchmark_predict.py benchmark/inphared/data/benchmark.fasta \

@@ -51,17 +51,17 @@ uv sync                      # creates .venv and installs dependencies
 ### Predict
 
 ```bash
-uv run python scripts/predict_cli.py input.fasta -o predictions.csv
+uv run rbpdetect2-predict input.fasta -o predictions.csv
 ```
 
 Writes a CSV with `id, seq, label, score`. Options:
 
 ```bash
 # also split sequences into nonrbps.fasta / tfs.fasta / tsps.fasta
-uv run python scripts/predict_cli.py input.fasta -o pred.csv --export-fastas
+uv run rbpdetect2-predict input.fasta -o pred.csv --export-fastas
 
 # tune the RBP-detection threshold  (P(TF)+P(TSP) >= threshold -> RBP)
-uv run python scripts/predict_cli.py input.fasta -o pred.csv --threshold 0.7
+uv run rbpdetect2-predict input.fasta -o pred.csv --threshold 0.7
 ```
 
 The trained checkpoint lives in `models/` and is **not** tracked in git
@@ -74,7 +74,7 @@ Needs `mmseqs2` on PATH (`conda install -c bioconda mmseqs2`) and the processed
 FASTAs in `data/` (`tf.fasta`, `tsp.fasta`, `nonrbp.fasta`).
 
 ```bash
-uv run python scripts/train_classifier.py --epochs 50
+uv run rbpdetect2-train --epochs 50
 ```
 
 Saves `models/rbpdetect2_linear_<plm>.pt`. The same pipeline, with exploration
@@ -108,17 +108,19 @@ still leading. Full per-class, per-tool and overlap-controlled tables:
 
 ```
 rbpdetect2/
-├── src/rbpdetect2/            importable package
+├── src/rbpdetect2/            importable package = the model + its tools
+│   ├── model.py               LinearClassifier architecture
+│   ├── train.py               training pipeline (rbpdetect2-train CLI)
+│   ├── predict.py             inference pipeline (rbpdetect2-predict CLI)
 │   ├── plm_embed.py           PLM embedding backends (ESMC, ESM2, SaProt)
 │   ├── embedding_cli.py       shared CLI for embedding extraction
 │   ├── benchmarking.py        frozen-embedding linear-probe utilities
 │   └── benchmark_data.py      benchmark dataset loaders
-├── scripts/                  one-off CLI tools
+├── scripts/                  one-off data-prep / analysis tools
 │   ├── combine_fastas.py      build tf/tsp/nonrbp FASTAs
 │   ├── diversity_analysis.py  mmseqs2 sequence-diversity / overlap check
 │   ├── extract_esm{c,2}_embeddings.py, extract_saprot_embeddings.py
 │   ├── build_saprot_sequences.py, diagnose_saprot_mismatch.py
-│   ├── train_classifier.py, predict_cli.py
 │   ├── benchmark_trained_model.py, benchmark_predict.py
 │   ├── check_benchmark_overlap.py, clean_benchmark_rescore.py
 │   ├── per_class_tables.py, check_structures.py, filter_deposcope.py

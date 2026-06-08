@@ -14,9 +14,11 @@ otherwise it is nonRBP. Lower the threshold for higher recall on RBPs.
 With --export-fastas, predictions are also written as three FASTA files
 (nonrbps.fasta, tfs.fasta, tsps.fasta) in the output directory.
 
-Examples:
-    python scripts/predict_cli.py input.fasta -o predictions.csv
-    python scripts/predict_cli.py input.fasta -o pred.csv --export-fastas --threshold 0.7
+Run via the console script:
+    uv run rbpdetect2-predict input.fasta -o predictions.csv
+    uv run rbpdetect2-predict input.fasta -o pred.csv --export-fastas --threshold 0.7
+or as a module:
+    uv run python -m rbpdetect2.predict input.fasta -o predictions.csv
 """
 
 import argparse
@@ -28,7 +30,7 @@ import torch
 
 from rbpdetect2.plm_embed import embed_sequences, load_plm, select_device, select_dtype
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 DEFAULT_CKPT = ROOT / "models" / "rbpdetect2_linear_facebook_esm2_t33_650M_UR50D.pt"
 
 
