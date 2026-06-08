@@ -1,96 +1,104 @@
-# rbpdetect2
+# RBPdetect2
 
-Ternary classifier for bacteriophage **Receptor Binding Proteins** (RBPs): Tail Fiber (TF), Tail Spike Protein (TSP), or non-RBP. Uses frozen **ESMC-6B** embeddings + a trainable linear head.
+Classifier for bacteriophage **Receptor-Binding Proteins** (RBPs) — the
+host-recognition proteins on phage tails. Given protein sequences, it assigns
+each one of three classes:
 
-## Requirements
+- **TF** — Tail Fiber
+- **TSP** — Tail Spike Protein
+- **nonRBP** — anything else
 
-| Dependency | How to get |
-|---|---|
-| Python 3.12 | auto-downloaded by uv |
-| uv | `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
-| mmseqs2 | `conda install -c bioconda mmseqs2` |
-| CUDA 12+ drivers | system install |
-| texlive-xetex *(optional, PDF export)* | `sudo apt install texlive-xetex texlive-fonts-recommended` |
+## How it works
 
-**GPU:** ESMC-6B in bfloat16 requires ~12 GB VRAM. The notebook auto-selects the GPU with the most free memory. CPU inference works but is very slow.
+Frozen **ESM2-650M** protein language model → mean-pooled residue embeddings
+(1280-d) → a trainable linear head (3-class softmax). The PLM is never
+fine-tuned; only the linear head is trained, so the model is small, fast, and
+cheap to retrain. Training uses a **cluster-aware split** (MMseqs2 @ 30%
+identity) so no cluster is shared across train/val/test, and class-balanced loss
+to handle imbalance.
 
-## Setup
+## Getting started
 
-```bash
-# 1. Install uv
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# 2. Create the default ESMC environment and install development tools
-uv sync --extra dev
-
-# 3. Install mmseqs2 (if not already present)
-conda install -c bioconda mmseqs2
-
-# 4. Log in to HuggingFace and accept the ESMC-6B license
-#    → https://huggingface.co/biohub/ESMC-6B
-huggingface-cli login
-
-# 5. Register the kernel and launch JupyterLab
-source .venv/bin/activate
-python -m ipykernel install --user --name rbpdetect2 --display-name "rbpdetect2 (py3.12)"
-jupyter lab
-```
-
-## Data
-
-Raw data goes in `data/raw/` (not tracked by git). See `CLAUDE.md` for the full file list.
+Requires [uv](https://docs.astral.sh/uv/). A CUDA GPU is recommended (ESM2-650M
+in bf16 needs ~2.5 GB VRAM); CPU works but is slow. ESM2 weights download
+automatically from Hugging Face (public, no login).
 
 ```bash
-# Step 1 — combine raw FASTAs into processed files
-python scripts/combine_fastas.py
-
-# Step 2 — sequence diversity analysis (requires mmseqs2)
-python scripts/diversity_analysis.py
+uv sync                      # create the environment
 ```
 
-Processed files written to `data/`: `tf.fasta` (778 seqs), `tsp.fasta` (205 seqs), `nonrbp.fasta` (1386 seqs).
+### Predict
 
-## Training
+```bash
+uv run python scripts/predict_cli.py input.fasta -o predictions.csv
+```
 
-Open `notebooks/train_classifier.ipynb` with the **rbpdetect2 (py3.12)** kernel.
+Writes a CSV with `id, seq, label, score`. Options:
 
-The notebook:
-1. Loads processed FASTAs
-2. Runs cluster-aware train/val/test split (MMseqs2 @ 30% identity — prevents leakage)
-3. Extracts ESMC-6B embeddings and caches them to `data/embeddings_cache.pt`
-4. Plots PCA of embeddings coloured by class
-5. Trains a linear classifier with class-weighted loss
-6. Evaluates on the test set and saves the checkpoint to `models/`
+```bash
+# also split sequences into nonrbps.fasta / tfs.fasta / tsps.fasta
+uv run python scripts/predict_cli.py input.fasta -o pred.csv --export-fastas
 
-Embedding extraction only runs once; subsequent runs load from cache.
+# tune the RBP-detection threshold  (P(TF)+P(TSP) >= threshold -> RBP)
+uv run python scripts/predict_cli.py input.fasta -o pred.csv --threshold 0.7
+```
 
-## Embedding benchmark
+The trained checkpoint lives in `models/` and is **not** tracked in git
+(gitignored). Produce it with the training script below, or download a release
+(coming soon).
 
-The frozen-embedding benchmark compares ESMC-6B, ESM2-650M, and SaProt-650M
-using separate uv environments, one shared cluster-aware split, and one shared
-linear-probe analysis notebook. See [`benchmarks/README.md`](benchmarks/README.md)
-for extraction and rerun instructions.
+### Train
+
+Needs `mmseqs2` on PATH (`conda install -c bioconda mmseqs2`) and the processed
+FASTAs in `data/` (`tf.fasta`, `tsp.fasta`, `nonrbp.fasta`).
+
+```bash
+uv run python scripts/train_classifier.py --epochs 50
+```
+
+Saves `models/rbpdetect2_linear_<plm>.pt`. The same pipeline, with exploration
+and plots, is in `notebooks/train_classifier.ipynb`.
+
+## Benchmark
+
+Evaluated against published tools on two held-out sets: **inphared** (phage
+genomes deposited after the training cutoff) and **experimental**
+(experimentally-validated proteins). Binary RBP detection (TF|TSP = positive):
+
+| Tool | inphared F1 | experimental F1 |
+|---|---|---|
+| **RBPdetect2 (this work)** | **0.796** | **0.915** |
+| PhageRBPdetect v4 (Boeckaerts 2024) | 0.802 | 0.864 |
+| Phold (Bouras 2024) | 0.789 | 0.632 |
+| Pharokka (Bouras 2023) | 0.790 | 0.609 |
+| RBPdetect2 (previous) | 0.528 | 0.802 |
+
+RBPdetect2 is competitive with the best general tools on inphared and the
+strongest on the experimental set. Because benchmark proteins can overlap the
+training set, results are also reported after removing proteins ≥50% identical
+to training (conservative): F1 **0.767** (inphared) / **0.826** (experimental),
+still leading. Full per-class, per-tool and overlap-controlled tables:
+
+- `benchmark/RESULTS_new_model.md` — headline + training-overlap (leakage) check
+- `benchmark/RESULTS_clean_rescore.md` — every tool re-scored after dedup
+- `benchmark/RESULTS_metric_tables.md` — per-class (TF/TSP) and binary tables
+- `benchmark/README.md` — how to re-run the benchmark
 
 ## Repository layout
 
 ```
-rbpdetect2/
-├── data/
-│   ├── raw/          # immutable source FASTAs (gitignored)
-│   ├── tf.fasta      # 778 TF sequences
-│   ├── tsp.fasta     # 205 TSP sequences
-│   └── nonrbp.fasta  # 1386 non-RBP sequences
-├── notebooks/
-│   ├── train_classifier.ipynb
-│   └── embedding_benchmark.ipynb
-├── benchmarks/
-│   ├── envs/                  # independent uv projects for model backends
-│   └── README.md
-├── scripts/
-│   ├── combine_fastas.py      # merges raw sources, applies exclusion list
-│   ├── diversity_analysis.py  # MMseqs2 clustering + cross-group contamination
-│   └── extract_*_embeddings.py
-├── models/           # saved checkpoints (gitignored)
-├── pyproject.toml
-└── uv.lock
+src/rbpdetect2/   importable package (embedding + benchmark helpers)
+scripts/          CLI tools (train, predict, benchmark, overlap check)
+notebooks/        training + embedding-benchmark notebooks
+benchmark/        self-contained tool comparison (data + precomputed baselines)
+data/             processed FASTAs (raw data and models/ are gitignored)
+tests/            test suite
 ```
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+## Citation
+
+Coming soon.
