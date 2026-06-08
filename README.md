@@ -84,20 +84,24 @@ and plots, is in `notebooks/train_classifier.ipynb`.
 
 Evaluated against published tools on two held-out sets: **inphared** (phage
 genomes deposited after the training cutoff) and **experimental**
-(experimentally-validated proteins). Binary RBP detection (TF|TSP = positive):
+(experimentally-validated proteins). Binary RBP detection (TF|TSP = positive).
+Because benchmark proteins can overlap the training set, the headline numbers
+are the **conservative** ones — every protein ≥50% identical to training
+removed (`id50`):
 
 | Tool | inphared F1 | experimental F1 |
 |---|---|---|
-| **RBPdetect2 (this work)** | **0.796** | **0.915** |
-| PhageRBPdetect v4 (Boeckaerts 2024) | 0.802 | 0.864 |
-| Phold (Bouras 2024) | 0.789 | 0.632 |
-| Pharokka (Bouras 2023) | 0.790 | 0.609 |
+| **RBPdetect2 (this work)** | **0.767** | **0.826** |
+| PhageRBPdetect v4 (Boeckaerts 2024) | 0.793 | 0.714 |
+| Phold (Bouras 2024) | 0.768 | 0.464 |
+| Pharokka (Bouras 2023) | 0.764 | 0.434 |
 
 RBPdetect2 is competitive with the best general tools on inphared and the
-strongest on the experimental set. Because benchmark proteins can overlap the
-training set, results are also reported after removing proteins ≥50% identical
-to training (conservative): F1 **0.767** (inphared) / **0.826** (experimental),
-still leading. Full per-class, per-tool and overlap-controlled tables:
+strongest on the experimental set even after this overlap removal. On the raw
+(no-dedup) sets the numbers are higher — F1 **0.796** (inphared) / **0.915**
+(experimental) — but the experimental set is ~12% byte-identical to training,
+so the id50 figures above are the ones to quote. Full per-class, per-tool and
+overlap-controlled tables:
 
 - `benchmark/RESULTS_new_model.md` — headline + training-overlap (leakage) check
 - `benchmark/RESULTS_clean_rescore.md` — every tool re-scored after dedup
