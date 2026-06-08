@@ -107,12 +107,42 @@ still leading. Full per-class, per-tool and overlap-controlled tables:
 ## Repository layout
 
 ```
-src/rbpdetect2/   importable package (embedding + benchmark helpers)
-scripts/          CLI tools (train, predict, benchmark, overlap check)
-notebooks/        training + embedding-benchmark notebooks
-benchmark/        self-contained tool comparison (data + precomputed baselines)
-data/             processed FASTAs (raw data and models/ are gitignored)
-tests/            test suite
+rbpdetect2/
+├── src/rbpdetect2/            importable package
+│   ├── plm_embed.py           PLM embedding backends (ESMC, ESM2, SaProt)
+│   ├── embedding_cli.py       shared CLI for embedding extraction
+│   ├── benchmarking.py        frozen-embedding linear-probe utilities
+│   └── benchmark_data.py      benchmark dataset loaders
+├── scripts/                  one-off CLI tools
+│   ├── combine_fastas.py      build tf/tsp/nonrbp FASTAs
+│   ├── diversity_analysis.py  mmseqs2 sequence-diversity / overlap check
+│   ├── extract_esm{c,2}_embeddings.py, extract_saprot_embeddings.py
+│   ├── build_saprot_sequences.py, diagnose_saprot_mismatch.py
+│   ├── train_classifier.py, predict_cli.py
+│   ├── benchmark_trained_model.py, benchmark_predict.py
+│   ├── check_benchmark_overlap.py, clean_benchmark_rescore.py
+│   ├── per_class_tables.py, check_structures.py, filter_deposcope.py
+├── notebooks/                training + embedding-benchmark notebooks
+│   ├── train_classifier.ipynb
+│   └── embedding_benchmark.ipynb
+├── benchmark/                self-contained tool comparison (vs other tools)
+│   ├── run_classifier.py, score.py
+│   ├── experimental/          data, predictions/, results/ (experimental set)
+│   ├── inphared/              data, predictions/, results/ (inphared set)
+│   ├── RESULTS_*.md           per-class / clean-rescore / metric tables
+│   └── PROVENANCE.md, README.md
+├── benchmark_embeddings/     PLM embedding benchmark (ESMC-6B / ESM2 / SaProt)
+│   ├── envs/                  per-model uv environments (esmc, esm2, saprot)
+│   ├── embeddings/            precomputed embeddings (gitignored .npy + ids)
+│   ├── splits/                stratified split_seed42 (committed for reuse)
+│   ├── results/              metrics, confusion matrices, predictions
+│   └── README.md
+├── webapp/                   prediction web UI (app.py, index.html)
+├── data/                     processed FASTAs + PCA plots (raw data gitignored)
+├── config/, docs/           experiment configs, design notes
+├── tests/                    test suite
+├── pyproject.toml, uv.lock  project deps (managed with uv)
+└── models/                  trained artifacts (gitignored)
 ```
 
 ## License
