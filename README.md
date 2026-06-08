@@ -162,7 +162,6 @@ rbpdetect2/
 │   ├── splits/                stratified split_seed42 (committed for reuse)
 │   ├── results/              metrics, confusion matrices, predictions
 │   └── README.md
-├── webapp/                   prediction web UI (app.py, index.html)
 ├── data/                     processed FASTAs + PCA plots (raw data gitignored)
 ├── config/, docs/           experiment configs, design notes
 ├── tests/                    test suite
