@@ -89,6 +89,10 @@ Because benchmark proteins can overlap the training set, the headline numbers
 are the **conservative** ones — every protein ≥50% identical to training
 removed (`id50`):
 
+> Note: `id50` removes proteins similar to RBPdetect2's training only. Phold has
+> no training set — it scans against a reference protein DB by homology — so its
+> matches to those same proteins aren't filtered out.
+
 | Tool | inphared F1 | experimental F1 |
 |---|---|---|
 | **RBPdetect2 (this work)** | **0.767** | **0.826** |
@@ -100,8 +104,23 @@ RBPdetect2 is competitive with the best general tools on inphared and the
 strongest on the experimental set even after this overlap removal. On the raw
 (no-dedup) sets the numbers are higher — F1 **0.796** (inphared) / **0.915**
 (experimental) — but the experimental set is ~12% byte-identical to training,
-so the id50 figures above are the ones to quote. Full per-class, per-tool and
-overlap-controlled tables:
+so the id50 figures above are the ones to quote.
+
+Per-class breakdown at `id50` (TF / TSP one-vs-rest F1). **Phold** is the only
+other benchmarked tool that natively subtypes TF vs TSP, so it is the fair
+comparison here (PhageRBPdetect v4 and Pharokka are binary-only / never call TSP):
+
+| Tool | inphared TF | inphared TSP | experimental TF | experimental TSP |
+|---|---|---|---|---|
+| **RBPdetect2 (this work)** | 0.604 | 0.166 | **0.549** | **0.432** |
+| Phold (Bouras 2024) | **0.739** | **0.529** | 0.335 | 0.174 |
+
+The two tools trade places by set: **Phold subtypes better on inphared**
+(its structure + annotation pipeline calls TF/TSP cleanly on genomic proteins),
+while **RBPdetect2 leads on the experimental, sequence-only set**. RBPdetect2's
+weak inphared-TSP F1 (0.166) is partly an artifact of a tiny, skewed positive
+set — only **21 TSP** in 2,832 proteins — with low precision. Full per-class,
+per-tool and overlap-controlled tables:
 
 - `benchmark/RESULTS_new_model.md` — headline + training-overlap (leakage) check
 - `benchmark/RESULTS_clean_rescore.md` — every tool re-scored after dedup
