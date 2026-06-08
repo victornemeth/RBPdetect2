@@ -64,9 +64,10 @@ uv run rbpdetect2-predict input.fasta -o pred.csv --export-fastas
 uv run rbpdetect2-predict input.fasta -o pred.csv --threshold 0.7
 ```
 
-The trained checkpoint lives in `models/` and is **not** tracked in git
-(gitignored). Produce it with the training script below, or download a release
-(coming soon).
+The trained ESM2-650M checkpoint ships with the repo
+(`models/rbpdetect2_linear_facebook_esm2_t33_650M_UR50D.pt`, ~18 KB — just the
+linear head), so prediction works out of the box. To retrain or use a different
+PLM, see below.
 
 ### Train
 
