@@ -36,9 +36,11 @@ def write_fasta(seqs: OrderedDict, path: Path):
 # Sequences confirmed non-RBP (misannotated) — excluded from all processed outputs.
 # CAB63592.1: DNA-directed RNA polymerase, found in tf_annotated.fasta
 # CAJ29347.1: DNA-directed RNA polymerase, found in tsp_annotated.fasta
+# MW358930_CDS_0001: mislabeled nonRBP, manual PCA review flagged it as a TSP.
 EXCLUDED_IDS: set[str] = {
     "CAB63592.1",
     "CAJ29347.1",
+    "MW358930_CDS_0001",
 }
 
 
@@ -56,7 +58,9 @@ def combine(sources: list[Path], label: str) -> OrderedDict:
                 print(f"  SKIP duplicate id: {seq_id} (from {src.name})")
                 continue
             seen_ids.add(seq_id)
-            combined[header] = seq
+            # Strip translation stop codons (present in nonRBP source FASTAs);
+            # structure predictors drop them, so they must not enter the seqs.
+            combined[header] = seq.replace("*", "")
     print(f"{label}: {len(combined)} sequences")
     return combined
 
@@ -75,7 +79,11 @@ def main():
         "TF",
     )
     tsp = combine(
-        [raw / "tsp_annotated.fasta", raw / "TSP_DepoCat.fasta"],
+        [
+            raw / "tsp_annotated.fasta",
+            raw / "TSP_DepoCat.fasta",
+            raw / "deposcope_nozzle_filtered.fasta",
+        ],
         "TSP",
     )
     nonrbp = combine(

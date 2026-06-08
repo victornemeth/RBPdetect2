@@ -1,0 +1,432 @@
+protein_id	pred	score	function	product
+P13390	1	0.98	tail	tail fiber protein
+P49714	1	0.949	tail	tail spike protein
+Q04830	1	0.971	tail	tail spike protein
+Q9XJP3	1	0.969	tail	tail spike protein
+P03749	1	1.0	tail	central tail fiber J
+D1L2X1	1	0.967	tail	tail spike protein
+A0A068Q5Q5	1	0.987	tail	tail fiber protein
+P12528	1	0.984	tail	tail spike protein
+O09496	1	0.949	tail	tail spike protein
+P03748	1	0.998	tail	tail fiber protein
+Q71AW2	1	0.928	tail	receptor binding tail protein
+M1EAS5	1	0.985	tail	long tail fiber protein distal subunit
+Q775D6	1	0.793	tail	tail protein
+K9L8K6	1	0.993	tail	tail protein
+D1L2X0	1	0.985	tail	tail fiber protein
+S6C8R9	1	0.918	tail	tail fiber protein
+A0A0A8JA06	1	0.972	tail	tail protein
+Q0PDK6	0	0.516	head and packaging	tail tip protein Tal
+A0A0A8J8S8	1	0.958	tail	tail spike protein
+P0DTN7	1	0.989	tail	tail protein
+Q858F5	1	0.984	tail	tail fiber protein
+P23207	1	1.0	tail	receptor binding tail protein
+A0A3T0ZBY1	1	0.986	tail	tail protein
+P04532	0	0.0	unknown function	hypothetical protein
+P10930	1	0.999	tail	tail collar fiber protein
+P03742	1	0.973	tail	long tail fiber protein proximal connector
+P0DTN8	1	0.988	tail	tail protein
+A0A5P1KKQ4	1	0.98	tail	tail protein
+P07876	1	1.0	tail	tail fiber protein host specificity
+M1EBB2	1	1.0	tail	tail fiber protein host specificity
+Q9G0B4	1	1.0	tail	tail fiber protein host specificity
+Q9T1V0	1	0.998	tail	tail fiber protein
+P08233	1	1.0	tail	tail fiber protein host specificity
+P03744	1	0.999	tail	long tail fiber protein distal subunit
+A0A0U3C9T3	1	0.995	tail	tail spike protein
+A0A0U3DL17	1	0.98	tail	tail protein
+D1L302	1	0.978	tail	tail protein
+A0A142F121	1	0.985	tail	tail fiber protein
+A0A219YHC0	1	0.976	tail	tail protein
+A8E283	1	0.645	tail	tail fiber protein
+P03740	1	1.0	tail	tail fiber assembly
+A0A0A8JA02	1	0.968	tail	tail protein
+A0A3S5IBH4	1	0.989	tail	tail fiber protein
+A0A3T0ZBZ8	1	0.993	tail	tail fiber protein
+A0A7S6R611	1	0.962	tail	tail protein
+A0A0A8J9B0	1	0.946	tail	tail protein
+A0A0A8JBQ8	1	0.971	tail	tail fiber protein
+A0A0A8JBR2	1	0.941	tail	tail fiber protein
+A0A0A8J9A5	1	0.717	tail	tail fiber protein
+A0A0A8J9V7	1	0.961	tail	tail fiber protein
+A0A3T0ZBX8	1	0.997	tail	tail fiber protein
+P18771	1	0.998	tail	tail fiber protein proximal subunit
+P03743	1	1.0	tail	hinge connector of long tail fiber protein distal connector
+P03739	1	1.0	tail	tail fiber assembly
+A0A219YHG0	1	0.971	tail	tail fiber protein
+A0A7S6R613	1	0.965	tail	tail fiber protein
+A0A1P8VW90	1	0.93	tail	tail protein
+A0A219YHC2	1	0.976	tail	tail spike protein
+A0A219YHF3	1	0.977	tail	tail spike protein
+Q6QGE7	1	0.998	tail	tail length tape measure protein
+P26747	0	0.0	head and packaging	major head protein
+Q6QGD8	0	0.0	head and packaging	major head protein
+P49861	0	0.0	head and packaging	major head protein
+Q9T1V4	1	1.0	tail	baseplate spike
+P03708	0	0.0	head and packaging	terminase large subunit
+O64046	1	0.973	tail	tail length tape measure protein
+P16009	1	0.638	tail	baseplate hub subunit and tail lysozyme
+P26745	0	0.0	head and packaging	terminase large subunit
+Q9MCT1	0	0.0	head and packaging	terminase large subunit
+P03707	0	0.0	head and packaging	terminase small subunit
+P10310	0	0.0	head and packaging	terminase large subunit
+P17312	0	0.0	head and packaging	terminase large subunit
+P54308	0	0.001	head and packaging	terminase large subunit
+A4ZFB3	0	0.0	head and packaging	major head protein
+P04535	0	0.0	head and packaging	major head protein
+P03736	1	1.0	tail	tail length tape measure protein
+P79678	1	0.996	tail	tail sheath
+O48449	1	0.997	tail	major tail protein
+P19726	0	0.0	head and packaging	major head protein
+Q6QGD5	0	0.0	head and packaging	portal protein
+P11112	1	0.999	tail	tail sheath stabilizer
+P13334	0	0.0	head and packaging	portal protein
+P03712	0	0.0	head and packaging	head decoration
+P54309	0	0.0	head and packaging	portal protein
+P26744	0	0.0	head and packaging	portal protein
+P03710	0	0.0	head and packaging	portal protein
+P04332	0	0.0	connector	upper collar connector
+P10928	1	0.991	tail	baseplate wedge subunit
+P04893	0	0.0	head and packaging	terminase small subunit
+P13339	1	0.984	tail	baseplate tail tube cap
+P13341	1	0.998	tail	tail tube
+P31340	1	1.0	tail	baseplate spike
+P13331	1	0.998	tail	tail tube
+P17172	1	0.952	tail	baseplate hub
+P03694	0	0.0	head and packaging	terminase large subunit
+P08558	1	0.812	tail	baseplate hub
+P03732	0	0.006	connector	tail terminator
+P13333	1	0.999	tail	tail tube
+P13332	1	1.0	tail	tail sheath
+Q8SD42	0	0.0	unknown function	hypothetical protein
+P79679	1	0.898	tail	tail tube protein
+P03733	1	0.975	tail	major tail protein
+Q9MCC1	1	0.977	tail	major tail protein
+Q38582	0	0.0	head and packaging	major head protein
+P68930	0	0.0	unknown function	hypothetical protein
+Q6QGE2	1	0.937	tail	major tail protein
+P49859	0	0.0	head and packaging	portal protein
+O48448	0	0.001	connector	tail terminator
+A7XXC2	0	0.0	head and packaging	major head protein
+P03713	0	0.0	head and packaging	major head protein
+Q6QGE1	0	0.011	connector	tail terminator
+P68928	0	0.0	head and packaging	terminase small subunit
+P13849	0	0.434	head and packaging	major head protein
+A0A385DT68	0	0.0	head and packaging	portal protein
+P09425	1	1.0	tail	baseplate wedge subunit
+Q9T1W1	0	0.0	head and packaging	major head protein
+P10927	1	0.991	tail	baseplate wedge tail fiber protein connector
+P03728	0	0.0	connector	head-tail adaptor
+P19060	1	0.992	tail	baseplate wedge subunit
+P10929	1	1.0	tail	baseplate wedge subunit
+P16011	1	1.0	tail	baseplate wedge subunit
+P19062	1	1.0	tail	baseplate wedge subunit
+P19061	1	0.997	tail	baseplate wedge subunit
+Q9MBW4	0	0.0	head and packaging	terminase small subunit
+Q6QGE9	1	1.0	tail	central tail fiber J
+Q9T1W5	0	0.0	head and packaging	portal protein
+P39234	0	0.01	moron, auxiliary metabolic gene and host takeover	PAAR motif of membran proteins
+Q9T1V2	1	1.0	tail	baseplate wedge subunit
+Q9T1V3	1	0.998	tail	baseplate wedge subunit
+Q9T1V1	1	0.99	tail	baseplate wedge subunit
+P17311	0	0.001	head and packaging	terminase small subunit
+D3KFX4	1	0.874	tail	tail associated lysin
+D3WAC1	0	0.0	head and packaging	terminase large subunit
+E7DNB6	1	0.998	tail	tail length tape measure protein
+A0AAE9G628	0	0.752	head and packaging	virion structural protein
+Q6QGE0	0	0.0	connector	tail completion or Neck1 protein
+P22502	0	0.182	connector	head closure
+D3WAC9	0	0.0	head and packaging	virion structural protein
+O64314	1	0.999	tail	tail length tape measure protein
+Q0PDK7	1	1.0	tail	tail length tape measure protein
+A0A1C8HSP0	0	0.002	head and packaging	major head protein
+A0MZE7	1	0.97	tail	tail sheath and receptor binding protein
+P13337	1	1.0	tail	baseplate hub subunit and tail length
+A0A385DVU6	0	0.0	head and packaging	major head protein
+Q859Q5	0	0.0	head and packaging	major head protein
+P25480	0	0.0	head and packaging	portal protein
+Q05223	0	0.0	head and packaging	major head protein
+A0A1L4BKQ4	0	0.0	head and packaging	portal protein
+Q6WHH0	1	0.946	tail	tail protein
+P51772	1	0.997	tail	baseplate hub
+P26701	1	0.997	tail	tail protein
+P13336	1	1.0	tail	baseplate hub distal subunit
+Q6QGE3	1	1.0	tail	base plate tail tube protein
+A0A1L4BKP6	0	0.0	head and packaging	terminase small subunit
+P03693	0	0.0	unknown function	hypothetical protein
+pdb:21DI_1	0	0.0	head and packaging	terminase small subunit
+pdb:2JES_2	0	0.0	unknown function	hypothetical protein
+pdb:11BP_1	0	0.0	head and packaging	portal protein
+Q9G096	1	0.92	tail	tail protein
+Q6U9F0	0	0.0	head and packaging	terminase small subunit
+A4K473	0	0.0	head and packaging	major head protein
+Q775C7	0	0.0	head and packaging	major head protein
+Q9T1C3	0	0.0	head and packaging	terminase large subunit
+Q9AYY6	1	0.977	tail	tail spike protein
+G3M189	1	0.945	tail	tail protein
+A0ACD6B8L6	1	0.982	tail	tail protein
+Q0E5W5	1	0.967	tail	tail protein
+D3W0F1	0	0.202	head and packaging	virion structural protein
+G0XNW5	1	0.78	tail	tail fiber protein
+I2GUG0	1	0.684	tail	tail fiber protein
+Q9AZ01	0	0.0	head and packaging	terminase small subunit
+A4ZRC0	0	0.0	head and packaging	major head protein
+A0A1L4BKS3	0	0.0	head and packaging	terminase large subunit
+A1YTN4	0	0.0	head and packaging	major head protein
+A0A0U1WZ79	1	1.0	tail	tail sheath
+A7XXR1	0	0.0	head and packaging	terminase large subunit
+A0ACD6B8H6	0	0.0	head and packaging	terminase large subunit
+A0ACD6B850	0	0.0	connector	upper collar connector
+A7XXB9	0	0.0	head and packaging	portal protein
+pdb:6Q3G_3	0	0.0	connector	upper collar connector
+G3M191	1	0.961	tail	tail spike protein
+A0ACD6BAA7	0	0.0	head and packaging	major head protein
+A0ACD6B848	1	0.853	tail	minor tail protein
+A0A0C5PVE3	1	0.92	tail	tail fiber protein
+A0A218KRF6	1	0.986	tail	tail fiber protein
+A0A221SBY4	1	0.954	tail	tail fiber protein
+Q9T1U9	1	1.0	tail	tail fiber assembly protein
+A0ACD6B8P8	0	0.0	head and packaging	virion structural protein
+G3M190	1	0.975	tail	tail fiber protein
+G3M192	1	0.868	tail	tail protein
+A0ACD6B8Y3	1	0.987	tail	tail fiber protein
+A7XXR3	0	0.0	head and packaging	portal protein
+A4ZFC2	1	1.0	tail	tail length tape measure protein
+A0ACD6B8V7	0	0.0	head and packaging	major head protein
+pdb:7KH1_6	1	0.997	tail	tail sheath
+pdb:7KH1_5	1	1.0	tail	baseplate wedge subunit
+pdb:7KH1_4	0	0.0	head and packaging	virion structural protein
+pdb:7KH1_3	1	0.778	tail	tail fiber protein
+pdb:7KH1_2	0	0.335	head and packaging	structural protein
+pdb:7KH1_1	0	0.61	head and packaging	virion structural protein
+P25477	0	0.0	head and packaging	major head protein
+A0A2L0HPR5	0	0.0	head and packaging	terminase small subunit
+G3MB97	0	0.0	head and packaging	major head protein
+Q8H9R5	0	0.0	head and packaging	terminase small subunit
+A4ZFC7	1	0.948	tail	minor tail protein
+A7XXR0	0	0.0	head and packaging	terminase small subunit
+Q8H9R8	0	0.0	head and packaging	portal protein
+A0AA82WNZ1	1	0.982	tail	tail fiber protein
+A0A0B4N0B9	1	1.0	tail	tail fiber protein
+A0A0B4N229	0	0.0	head and packaging	portal protein
+A0AA82WP05	1	0.982	tail	tail fiber protein
+A0AA82WP04	0	0.0	head and packaging	major head protein
+A0AA82WNZ2	1	0.87	tail	tail protein
+I7HHN4	0	0.0	head and packaging	portal protein
+A0A7S6TZU4	1	0.995	tail	tail spike protein
+A0A2K8I4H6	0	0.0	head and packaging	terminase small subunit
+A0A385DVT1	1	0.958	tail	tail fiber protein
+Q7Y5D9	1	0.995	tail	L-shaped tail fiber protein assembly
+Q9FZW5	0	0.0	connector	upper collar connector
+A4PE30	0	0.0	head and packaging	major head protein
+P68654	0	0.0	head and packaging	terminase small subunit
+A0ACD6BAF2	0	0.0	head and packaging	major head protein
+pdb:7KLN_1	0	0.0	head and packaging	portal protein
+pdb:7KJK_5	1	0.997	tail	tail sheath
+pdb:7KJK_4	0	0.619	head and packaging	virion structural protein
+pdb:7KJK_1	0	0.028	connector	tail terminator
+pdb:7KH1_7	1	1.0	tail	baseplate wedge subunit
+A0A160DFS7	0	0.0	head and packaging	major head protein
+A0ACD6B8Z9	0	0.0	head and packaging	major head protein
+A0A3G2KE56	0	0.0	head and packaging	major head protein
+A0ACD6B8P9	0	0.0	head and packaging	major head protein
+G1BPL7	0	0.0	head and packaging	major head protein
+A0A514A559	0	0.0	head and packaging	major head protein
+Q855K4	0	0.0	head and packaging	major head protein
+A0A2K8HL37	0	0.0	head and packaging	terminase large subunit
+A0A7G3WWQ5	0	0.0	connector	head-tail adaptor
+A0A7G3WWS0	0	0.0	head and packaging	terminase large subunit
+A0A7U0GB71	1	1.0	tail	tail sheath
+A0ACD6BAM0	0	0.0	head and packaging	virion structural protein
+A0A2K8HWX3	0	0.0	head and packaging	minor head protein
+A0A482MFS6	0	0.0	head and packaging	major head protein
+A0A0A7RZ97	0	0.016	connector	tail terminator
+A0A0A7RUL5	0	0.0	head and packaging	portal protein
+A0A345GTT3	0	0.0	head and packaging	major head protein
+A0ACD6BAB1	0	0.0	head and packaging	portal protein
+A0ACD6BAB2	0	0.0	head and packaging	major head protein
+A0A482MF73	0	0.006	connector	tail terminator
+A0ACD6BA82	0	0.0	head and packaging	portal protein
+A0ACD6BA91	1	0.554	tail	tail tube
+A0ACD6BA90	1	0.994	tail	tail sheath
+A0A2K8HPF4	0	0.0	unknown function	hypothetical protein
+A0ACD6BA92	1	0.977	tail	baseplate hub
+A0ACD6BA99	1	0.818	tail	tail fiber protein
+A0ACD6BA97	0	0.0	unknown function	hypothetical protein
+A0ACD6BA95	1	1.0	tail	baseplate wedge subunit
+A0ACD6BA96	1	1.0	tail	baseplate wedge subunit
+A0ACD6BA94	1	1.0	tail	baseplate spike
+A0ACD6BA93	1	0.708	tail	baseplate hub
+A0A2K8ICH7	1	1.0	tail	baseplate spike
+A0A2K8IA76	1	0.884	tail	baseplate hub
+A0A2K8I4C0	1	0.934	tail	tail fiber protein
+A0A2K8HNS1	1	0.838	tail	tail fiber protein
+A0A5C1KAX6	1	1.0	tail	tail fiber protein
+A0A6G9LIA6	1	0.998	tail	baseplate wedge subunit
+A0A6G9LFR0	0	0.0	head and packaging	virion structural protein
+A0A1S6L1I0	0	0.0	head and packaging	major head protein
+A0A1S6L1H3	1	0.96	tail	tail spike protein
+A7XXS2	1	0.998	tail	minor tail protein
+A0A6G8R1V0	0	0.0	head and packaging	major head protein
+A0ACD6B918	0	0.0	head and packaging	major head protein
+A0A410N6Q2	0	0.0	head and packaging	portal protein
+A0A410N6T9	0	0.0	head and packaging	major head protein
+A1YTN9	1	0.487	tail	tail protein
+A0A0U1WIV9	0	0.0	head and packaging	portal protein
+A1YTP2	0	0.746	head and packaging	virion structural protein
+A0A4P1LUD8	1	0.939	tail	tail spike protein
+A0AA82WPI7	1	0.976	tail	tail fiber protein
+pdb:8OPZ_1	1	0.977	tail	tail fiber protein
+A0ACD6B8X2	1	0.296	tail	tail fiber protein
+A0ACD6B8X3	1	0.989	tail	tail collar protein
+A0ACD6B8W6	1	0.922	tail	tail sheath
+P0DJY6	1	1.0	tail	tail fiber protein
+A0A345GU07	1	0.811	tail	tail fiber protein
+A0A345GTT8	0	0.0	head and packaging	portal protein
+pdb:8I4M_1	0	0.0	connector	head-tail adaptor
+A0A0A7RSI5	1	0.974	tail	major tail protein
+A0A0A7RZ92	1	0.998	tail	tail length tape measure protein
+A0A0A7RZ88	1	0.946	tail	tail fiber protein
+A0A0A7RUJ8	1	0.99	tail	L-shaped tail fiber protein assembly
+A0A0A7RSL1	1	1.0	tail	central tail fiber J
+A0ACD6B911	0	0.0	head and packaging	major head protein
+A0ACD6B910	0	0.0	head and packaging	portal protein
+A0A2K9VGS2	1	0.965	tail	tail fiber protein
+M9NUS8	0	0.0	head and packaging	major head protein
+M9NVD0	1	1.0	tail	tail length tape measure protein
+M9NUS9	1	0.888	tail	major tail protein with Ig-like domain
+M9NUT0	1	0.999	tail	tail assembly protein
+M9NT01	0	0.008	connector	tail terminator
+A4ZFA8	0	0.0	head and packaging	portal protein
+A0A1P7WFW3	1	0.879	tail	tail fiber protein
+A0A1P7WG10	0	0.0	connector	head-tail adaptor
+A0A1P7WG08	0	0.0	head and packaging	major head protein
+B2ZNR4	0	0.0	head and packaging	major head protein
+L7P7R0	0	0.0	head and packaging	portal protein
+L7P847	1	1.0	tail	tail length tape measure protein
+Q9B0A2	1	0.962	tail	major tail protein
+Q9B096	1	0.994	tail	minor tail protein
+Q9B092	1	0.995	tail	minor tail protein
+Q4ZA02	0	0.61	head and packaging	virion structural protein
+Q4ZA00	1	1.0	tail	baseplate protein
+P03764	1	1.0	tail	tail fiber protein
+Q9B0A7	0	0.012	head and packaging	major head protein
+Q9B0B0	0	0.0	head and packaging	portal protein
+A0A345MFM5	0	0.001	connector	tail terminator
+A0ACD6BAR1	0	0.0	head and packaging	portal protein
+A0AAE9C514	1	0.653	tail	tail fiber protein
+A0AAE8YF79	0	0.0	head and packaging	portal protein
+A0AAE8YCM0	0	0.0	head and packaging	major head protein
+K9L4F2	1	0.986	tail	baseplate spike
+K9L3Y2	0	0.825	head and packaging	virion structural protein
+K9L4E9	1	0.994	tail	tail sheath
+K9L3Y4	1	1.0	tail	tail length tape measure protein
+K9L5R4	1	0.718	tail	tail fiber protein Ig-domain containing
+K9L5R6	1	0.978	tail	tail fiber protein
+K9L3X8	0	0.0	head and packaging	major head protein
+K9L587	0	0.0	head and packaging	portal protein
+K9L5Q6	0	0.177	connector	tail terminator
+A0A2K9VK95	0	0.0	head and packaging	major head protein
+A0A2K9VKD2	0	0.0	head and packaging	portal protein
+A0A2K8IC08	0	0.0	head and packaging	portal protein
+A0A2K8I3N9	0	0.0	head and packaging	virion structural protein
+A0A5P1KV51	0	0.0	unknown function	hypothetical protein
+A0A5P1KVD4	1	0.64	tail	tail protein
+A0A5P1KVB9	1	0.56	tail	lytic tail protein
+A0A5P1KV60	1	0.983	tail	tail protein
+A0A5P1KVA6	1	1.0	tail	baseplate wedge subunit
+A0A5P1KYR7	1	0.901	tail	tail fiber protein
+A0A5P1KVB7	0	0.0	head and packaging	major head protein
+A0A2K9V5R5	1	1.0	tail	baseplate wedge subunit
+A0A7I8V4E3	1	1.0	tail	tail tube
+A0A2K9V618	1	0.993	tail	baseplate tail tube cap
+A0A2K9V5Z4	1	1.0	tail	baseplate hub subunit and tail length
+A0A7T3TJP2	1	0.982	tail	baseplate hub
+A0A2K9V5T6	1	0.999	tail	tail tube
+A0A2K9V5T5	1	1.0	tail	baseplate wedge subunit
+A0A2K9V5S8	1	0.983	tail	baseplate wedge subunit
+A0A2K9V5R4	1	0.999	tail	baseplate wedge subunit
+A0A2K9V5S7	1	1.0	tail	tail sheath
+A0A2K9V5S1	1	0.984	tail	baseplate wedge tail fiber protein connector
+A0A2Z4QAY9	1	1.0	tail	baseplate wedge subunit
+A0A2K9V5T9	1	0.986	tail	baseplate wedge subunit
+A0A976LXP5	1	0.671	tail	baseplate hub subunit and tail lysozyme
+A0A5B9NKG2	1	0.999	tail	tail fiber protein proximal subunit
+A0A0U1WF63	1	1.0	tail	baseplate wedge subunit
+A0A0U1UXD7	1	1.0	tail	baseplate protein
+A0A0U1WGQ5	0	0.0	head and packaging	virion structural protein
+A0A0U1WIJ9	1	0.871	tail	tail fiber protein
+Q4Z9Z7	0	0.0	head and packaging	virion structural protein
+Q4Z9Z9	1	1.0	tail	baseplate wedge subunit
+A0A0U1X2L4	0	0.61	head and packaging	virion structural protein
+A0A0U1UXD6	0	0.0	unknown function	hypothetical protein
+Q0H263	0	0.0	head and packaging	portal protein
+Q9T1V8	0	0.046	head and packaging	portal protein
+A0A2H5BHF7	0	0.0	head and packaging	major head protein
+A0A059PYA9	0	0.0	connector	head-tail adaptor
+A0A059PY41	1	0.304	tail	tail fiber protein
+A0A059PY92	0	0.0	head and packaging	major head protein
+A0ACD6BAP9	0	0.0	head and packaging	portal protein
+A0ACD6BAQ6	1	0.999	tail	major tail protein
+J7F9G3	0	0.0	head and packaging	major head protein
+J7FA80	1	0.993	tail	tail sheath
+A0A410N6W4	0	0.0	unknown function	hypothetical protein
+A0A410N721	1	0.929	tail	tail protein
+A0A410N6T6	1	0.851	tail	baseplate hub
+A0A410N6X8	1	0.946	tail	base plate tail tube protein
+A0A410N6U0	1	0.905	tail	tail tube
+A0A410N6U9	0	0.017	connector	tail terminator
+J9QEB7	1	0.999	tail	tail length tape measure protein
+J9QE70	1	1.0	tail	tail sheath
+J9QE72	1	1.0	tail	baseplate wedge subunit
+Q6XQC4	1	1.0	tail	tail length tape measure protein
+A0A7S9SW18	1	1.0	tail	baseplate wedge subunit
+A0A7S9SVZ9	1	1.0	tail	baseplate wedge subunit
+A0A7S9SWG4	1	0.991	tail	baseplate wedge tail fiber protein connector
+K9L596	1	1.0	tail	baseplate wedge subunit
+K9L557	0	0.0	head and packaging	virion structural protein
+A0A0A7RVH8	0	0.0	head and packaging	portal protein
+A0A7S9SW10	0	0.0	head and packaging	portal protein
+A0MZE1	0	0.0	head and packaging	portal protein
+pdb:9LBN_1	0	0.0	head and packaging	portal protein
+pdb:9LBM_1	0	0.0	head and packaging	major head protein
+Q6XQB9	1	1.0	tail	central tail fiber J
+Q6XQD8	0	0.0	head and packaging	portal protein
+Q6XQD3	0	0.0	head and packaging	major head protein
+A0ACD6BAQ2	0	0.0	head and packaging	major head protein
+Q9T1V6	1	0.999	tail	tail length tape measure protein
+A0A7S9SVH6	1	0.639	tail	baseplate hub subunit and tail lysozyme
+A0A7S9XI21	1	1.0	tail	baseplate wedge subunit
+A0A7S9SVI2	1	0.999	tail	tail tube
+A0A291AXD4	0	0.0	head and packaging	virion structural protein
+A7XXS1	0	0.014	connector	tail terminator
+A0AAE7VV46	1	1.0	tail	tail length tape measure protein
+A0AAE8B2A4	0	0.0	head and packaging	major head protein
+pdb:9N71_1	1	0.837	tail	major tail protein
+A0AAE7VUU6	0	0.035	connector	tail terminator
+A0AAE7VVG7	0	0.0	head and packaging	portal protein
+A0A7S9SVW9	1	1.0	tail	tail sheath
+A0A7S9SVT9	1	0.984	tail	baseplate tail tube cap
+A0A7S9SW44	1	1.0	tail	baseplate wedge subunit
+A0A7S9XHP4	1	0.951	tail	baseplate hub
+A0A7S9XHN5	1	0.999	tail	tail sheath stabilizer
+A0A346FJP3	0	0.001	head and packaging	terminase small subunit
+pdb:9ZD7_11	1	0.807	tail	tail fiber protein
+pdb:9ZBS_4	0	0.046	connector	tail completion
+pdb:9ZBS_1	0	0.0	head and packaging	portal protein
+A0AA49HID0	1	0.323	tail	major tail protein
+A0AA49HGR3	1	0.971	tail	tail fiber protein
+A0AA49HFY0	0	0.0	head and packaging	portal protein
+A0AA49CM87	0	0.0	head and packaging	major head protein
+A0AAE8B389	0	0.0	moron, auxiliary metabolic gene and host takeover	membrane protein
+J7F8Z3	1	0.739	tail	tail fiber protein
+J7F8X4	1	1.0	tail	baseplate wedge subunit
+J7FAQ1	1	1.0	tail	baseplate spike
+J7F8Z5	0	0.0	head and packaging	portal protein
+Q9XJT3	0	0.0	head and packaging	major head protein
+A0A291AXC6	1	0.999	tail	tail length tape measure protein
+A0A291AXC9	1	0.553	tail	tail fiber protein
+A0A8S5S2W5	1	0.928	tail	central tail fiber J
+A0A8S5S3F2	1	0.888	tail	central tail fiber J
+A0A8S5V860	1	0.748	tail	tail fiber protein
+P15316	0	0.17	moron, auxiliary metabolic gene and host takeover	VFDB virulence factor protein

@@ -1,0 +1,13 @@
+# Scoring only (score.py)
+pandas==2.2.3
+scikit-learn==1.7.0
+
+# Running the classifier (run_classifier.py)
+torch==2.6.0
+transformers==4.52.4
+biopython==1.85
+tqdm
+
+# Versions pinned to the environment the shipped baseline predictions were
+# produced in. transformers/torch changes can shift ESM logits on borderline
+# sequences, so pin these to reproduce run_classifier.py outputs exactly.

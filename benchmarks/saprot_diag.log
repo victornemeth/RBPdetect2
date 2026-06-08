@@ -1,0 +1,17 @@
+=== 1361 mismatches ===
+category: {'match': 1544, 'subst': 1, 'prefix_ok': 1360}
+by_label: {'TF': 1, 'nonRBP': 1360}
+by_folder: {'tf': 1, 'nonrbps': 1360}
+len delta (fasta-struct): >0(struct shorter)=1360 <0(struct longer)=0 =0=1
+   median delta=1 min=0 max=1
+
+--- subst samples ---
+   TF/tf ID_57298_370: struct=1140 fasta=1140 d=0 firstdiff@740 s='APIJXN' a='APIXXN'
+
+--- prefix_ok samples ---
+   nonRBP/nonrbps NC_002515_CDS_0001: struct=694 fasta=695 d=1 firstdiff@694 s='IYE*' a='IYE'
+   nonRBP/nonrbps NC_002643_CDS_0003: struct=151 fasta=152 d=1 firstdiff@151 s='PTP*' a='PTP'
+   nonRBP/nonrbps MF431616_CDS_0028: struct=75 fasta=76 d=1 firstdiff@75 s='GSE*' a='GSE'
+   nonRBP/nonrbps NC_074633_CDS_0011: struct=339 fasta=340 d=1 firstdiff@339 s='DFE*' a='DFE'
+   nonRBP/nonrbps NC_074653_CDS_0013: struct=241 fasta=242 d=1 firstdiff@241 s='TLV*' a='TLV'
+   nonRBP/nonrbps OP056300_CDS_0033: struct=151 fasta=152 d=1 firstdiff@151 s='HEL*' a='HEL'

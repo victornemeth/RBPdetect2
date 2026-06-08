@@ -20,8 +20,8 @@ Ternary classifier for bacteriophage **Receptor Binding Proteins** (RBPs): Tail 
 # 1. Install uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# 2. Create venv and install all Python deps
-uv venv && uv pip install -e ".[dev]"
+# 2. Create the default ESMC environment and install development tools
+uv sync --extra dev
 
 # 3. Install mmseqs2 (if not already present)
 conda install -c bioconda mmseqs2
@@ -64,6 +64,13 @@ The notebook:
 
 Embedding extraction only runs once; subsequent runs load from cache.
 
+## Embedding benchmark
+
+The frozen-embedding benchmark compares ESMC-6B, ESM2-650M, and SaProt-650M
+using separate uv environments, one shared cluster-aware split, and one shared
+linear-probe analysis notebook. See [`benchmarks/README.md`](benchmarks/README.md)
+for extraction and rerun instructions.
+
 ## Repository layout
 
 ```
@@ -74,11 +81,15 @@ rbpdetect2/
 │   ├── tsp.fasta     # 205 TSP sequences
 │   └── nonrbp.fasta  # 1386 non-RBP sequences
 ├── notebooks/
-│   └── train_classifier.ipynb
+│   ├── train_classifier.ipynb
+│   └── embedding_benchmark.ipynb
+├── benchmarks/
+│   ├── envs/                  # independent uv projects for model backends
+│   └── README.md
 ├── scripts/
 │   ├── combine_fastas.py      # merges raw sources, applies exclusion list
-│   └── diversity_analysis.py  # MMseqs2 clustering + cross-group contamination
-├── src/rbpdetect2/   # importable package (empty for now)
+│   ├── diversity_analysis.py  # MMseqs2 clustering + cross-group contamination
+│   └── extract_*_embeddings.py
 ├── models/           # saved checkpoints (gitignored)
 ├── pyproject.toml
 └── uv.lock

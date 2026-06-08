@@ -7,12 +7,14 @@ name = "rbpdetect2"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    # ESMC model (Biohub release — ESMC-6B via HuggingFace transformers)
-    "esm @ git+https://github.com/Biohub/esm.git@main",
-    "transformers>=4.51",
-    "huggingface_hub>=0.27",
     # ML core
     "torch>=2.3.0",
+    # Protein language models via Hugging Face (ESM2-650M is the primary model;
+    # SaProt also loads through transformers).
+    "transformers>=4.57",
+    "safetensors>=0.7",
+    "huggingface-hub>=0.36",
+    "accelerate>=1.0",
     # Data / training
     "numpy>=1.26",
     "pandas>=2.2",
@@ -32,6 +34,17 @@ dependencies = [
     # Biopython for FASTA handling
     "biopython>=1.84",
 ]
+
+[dependency-groups]
+# Optional: only needed to reproduce the ESMC-6B embedding benchmark. The core
+# classifier uses ESM2-650M, which needs nothing beyond transformers above.
+# Install with: uv sync --group esmc
+esmc = [
+    "esm @ git+https://github.com/Biohub/esm.git@f652b471d29da828b31e9b7a9cf7d0a7803240f5",
+]
+
+[tool.uv]
+default-groups = []
 
 [project.optional-dependencies]
 dev = [

@@ -1,0 +1,432 @@
+protein_id	pred	category
+P13390	1	tail
+P49714	1	tail
+Q04830	1	tail
+Q9XJP3	1	tail
+P03749	1	tail
+D1L2X1	1	tail
+A0A068Q5Q5	1	tail
+P12528	1	tail
+O09496	1	tail
+P03748	1	tail
+Q71AW2	1	tail
+M1EAS5	1	tail
+Q775D6	1	tail
+K9L8K6	1	tail
+D1L2X0	1	tail
+S6C8R9	1	tail
+A0A0A8JA06	1	tail
+Q0PDK6	0	head and packaging
+A0A0A8J8S8	1	tail
+P0DTN7	1	tail
+Q858F5	1	tail
+P23207	1	tail
+A0A3T0ZBY1	1	tail
+P04532	1	tail
+P10930	1	tail
+P03742	1	tail
+P0DTN8	1	tail
+A0A5P1KKQ4	1	tail
+P07876	1	tail
+M1EBB2	1	tail
+Q9G0B4	1	tail
+Q9T1V0	1	tail
+P08233	1	tail
+P03744	1	tail
+A0A0U3C9T3	1	tail
+A0A0U3DL17	1	tail
+D1L302	1	tail
+A0A142F121	1	tail
+A0A219YHC0	1	tail
+A8E283	1	tail
+P03740	1	tail
+A0A0A8JA02	1	tail
+A0A3S5IBH4	1	tail
+A0A3T0ZBZ8	1	tail
+A0A7S6R611	1	tail
+A0A0A8J9B0	1	tail
+A0A0A8JBQ8	1	tail
+A0A0A8JBR2	1	tail
+A0A0A8J9A5	1	tail
+A0A0A8J9V7	1	tail
+A0A3T0ZBX8	0	unknown function
+P18771	1	tail
+P03743	1	tail
+P03739	1	tail
+A0A219YHG0	1	tail
+A0A7S6R613	1	tail
+A0A1P8VW90	1	tail
+A0A219YHC2	0	unknown function
+A0A219YHF3	0	unknown function
+Q6QGE7	1	tail
+P26747	0	head and packaging
+Q6QGD8	0	head and packaging
+P49861	0	head and packaging
+Q9T1V4	1	tail
+P03708	0	head and packaging
+O64046	1	tail
+P16009	1	tail
+P26745	0	unknown function
+Q9MCT1	0	head and packaging
+P03707	0	head and packaging
+P10310	0	head and packaging
+P17312	0	head and packaging
+P54308	0	head and packaging
+A4ZFB3	0	head and packaging
+P04535	0	head and packaging
+P03736	1	tail
+P79678	1	tail
+O48449	1	tail
+P19726	0	head and packaging
+Q6QGD5	0	head and packaging
+P11112	1	tail
+P13334	0	head and packaging
+P03712	0	head and packaging
+P54309	0	head and packaging
+P26744	0	unknown function
+P03710	0	head and packaging
+P04332	0	connector
+P10928	1	tail
+P04893	0	head and packaging
+P13339	1	tail
+P13341	1	tail
+P31340	1	tail
+P13331	1	tail
+P17172	1	tail
+P03694	0	head and packaging
+P08558	1	tail
+P03732	0	connector
+P13333	1	tail
+P13332	1	tail
+Q8SD42	0	head and packaging
+P79679	1	tail
+P03733	1	tail
+Q9MCC1	1	tail
+Q38582	0	head and packaging
+P68930	0	connector
+Q6QGE2	1	tail
+P49859	0	head and packaging
+O48448	0	connector
+A7XXC2	0	head and packaging
+P03713	0	unknown function
+Q6QGE1	0	connector
+P68928	0	unknown function
+P13849	0	head and packaging
+A0A385DT68	0	head and packaging
+P09425	1	tail
+Q9T1W1	0	head and packaging
+P10927	1	tail
+P03728	0	connector
+P19060	1	tail
+P10929	1	tail
+P16011	1	tail
+P19062	1	tail
+P19061	1	tail
+Q9MBW4	0	head and packaging
+Q6QGE9	1	tail
+Q9T1W5	0	head and packaging
+P39234	0	moron, auxiliary metabolic gene and host takeover
+Q9T1V2	1	tail
+Q9T1V3	1	tail
+Q9T1V1	1	tail
+P17311	0	head and packaging
+D3KFX4	1	tail
+D3WAC1	0	head and packaging
+E7DNB6	1	tail
+A0AAE9G628	0	head and packaging
+Q6QGE0	0	connector
+P22502	0	connector
+D3WAC9	0	head and packaging
+O64314	1	tail
+Q0PDK7	1	tail
+A0A1C8HSP0	0	head and packaging
+A0MZE7	1	tail
+P13337	1	tail
+A0A385DVU6	0	head and packaging
+Q859Q5	0	head and packaging
+P25480	0	head and packaging
+Q05223	0	head and packaging
+A0A1L4BKQ4	0	head and packaging
+Q6WHH0	1	tail
+P51772	1	tail
+P26701	1	tail
+P13336	1	tail
+Q6QGE3	1	tail
+A0A1L4BKP6	0	head and packaging
+P03693	0	head and packaging
+pdb:21DI_1	0	head and packaging
+pdb:2JES_2	0	unknown function
+pdb:11BP_1	0	head and packaging
+Q9G096	1	tail
+Q6U9F0	0	head and packaging
+A4K473	0	unknown function
+Q775C7	0	head and packaging
+Q9T1C3	0	head and packaging
+Q9AYY6	1	tail
+G3M189	1	tail
+A0ACD6B8L6	1	tail
+Q0E5W5	1	tail
+D3W0F1	1	tail
+G0XNW5	1	tail
+I2GUG0	1	tail
+Q9AZ01	0	head and packaging
+A4ZRC0	0	head and packaging
+A0A1L4BKS3	0	unknown function
+A1YTN4	0	head and packaging
+A0A0U1WZ79	1	tail
+A7XXR1	0	head and packaging
+A0ACD6B8H6	0	head and packaging
+A0ACD6B850	0	connector
+A7XXB9	0	head and packaging
+pdb:6Q3G_3	0	connector
+G3M191	1	tail
+A0ACD6BAA7	0	unknown function
+A0ACD6B848	1	tail
+A0A0C5PVE3	1	tail
+A0A218KRF6	1	tail
+A0A221SBY4	1	tail
+Q9T1U9	1	tail
+A0ACD6B8P8	0	head and packaging
+G3M190	1	tail
+G3M192	1	tail
+A0ACD6B8Y3	1	tail
+A7XXR3	0	head and packaging
+A4ZFC2	0	unknown function
+A0ACD6B8V7	0	head and packaging
+pdb:7KH1_6	1	tail
+pdb:7KH1_5	1	tail
+pdb:7KH1_4	0	unknown function
+pdb:7KH1_3	1	tail
+pdb:7KH1_2	0	head and packaging
+pdb:7KH1_1	0	unknown function
+P25477	0	unknown function
+A0A2L0HPR5	0	head and packaging
+G3MB97	0	head and packaging
+Q8H9R5	0	head and packaging
+A4ZFC7	1	tail
+A7XXR0	0	head and packaging
+Q8H9R8	0	head and packaging
+A0AA82WNZ1	1	tail
+A0A0B4N0B9	1	tail
+A0A0B4N229	0	head and packaging
+A0AA82WP05	1	tail
+A0AA82WP04	0	head and packaging
+A0AA82WNZ2	1	tail
+I7HHN4	0	unknown function
+A0A7S6TZU4	1	tail
+A0A2K8I4H6	0	unknown function
+A0A385DVT1	0	unknown function
+Q7Y5D9	1	tail
+Q9FZW5	0	connector
+A4PE30	0	unknown function
+P68654	0	head and packaging
+A0ACD6BAF2	0	head and packaging
+pdb:7KLN_1	0	head and packaging
+pdb:7KJK_5	1	tail
+pdb:7KJK_4	0	unknown function
+pdb:7KJK_1	0	unknown function
+pdb:7KH1_7	0	unknown function
+A0A160DFS7	0	unknown function
+A0ACD6B8Z9	0	head and packaging
+A0A3G2KE56	0	head and packaging
+A0ACD6B8P9	0	head and packaging
+G1BPL7	0	head and packaging
+A0A514A559	0	head and packaging
+Q855K4	0	head and packaging
+A0A2K8HL37	0	unknown function
+A0A7G3WWQ5	0	connector
+A0A7G3WWS0	0	head and packaging
+A0A7U0GB71	1	tail
+A0ACD6BAM0	0	head and packaging
+A0A2K8HWX3	0	head and packaging
+A0A482MFS6	0	head and packaging
+A0A0A7RZ97	0	connector
+A0A0A7RUL5	0	head and packaging
+A0A345GTT3	0	head and packaging
+A0ACD6BAB1	0	head and packaging
+A0ACD6BAB2	0	head and packaging
+A0A482MF73	0	unknown function
+A0ACD6BA82	0	head and packaging
+A0ACD6BA91	0	unknown function
+A0ACD6BA90	1	tail
+A0A2K8HPF4	1	tail
+A0ACD6BA92	1	tail
+A0ACD6BA99	0	unknown function
+A0ACD6BA97	0	unknown function
+A0ACD6BA95	1	tail
+A0ACD6BA96	1	tail
+A0ACD6BA94	0	unknown function
+A0ACD6BA93	1	tail
+A0A2K8ICH7	1	tail
+A0A2K8IA76	1	tail
+A0A2K8I4C0	1	tail
+A0A2K8HNS1	1	tail
+A0A5C1KAX6	1	tail
+A0A6G9LIA6	1	tail
+A0A6G9LFR0	0	head and packaging
+A0A1S6L1I0	0	head and packaging
+A0A1S6L1H3	0	unknown function
+A7XXS2	1	tail
+A0A6G8R1V0	0	head and packaging
+A0ACD6B918	0	unknown function
+A0A410N6Q2	0	unknown function
+A0A410N6T9	0	unknown function
+A1YTN9	0	unknown function
+A0A0U1WIV9	0	head and packaging
+A1YTP2	0	head and packaging
+A0A4P1LUD8	1	tail
+A0AA82WPI7	1	tail
+pdb:8OPZ_1	1	tail
+A0ACD6B8X2	0	unknown function
+A0ACD6B8X3	1	tail
+A0ACD6B8W6	0	unknown function
+P0DJY6	1	tail
+A0A345GU07	1	tail
+A0A345GTT8	0	head and packaging
+pdb:8I4M_1	0	connector
+A0A0A7RSI5	1	tail
+A0A0A7RZ92	1	tail
+A0A0A7RZ88	1	tail
+A0A0A7RUJ8	1	tail
+A0A0A7RSL1	1	tail
+A0ACD6B911	0	head and packaging
+A0ACD6B910	0	head and packaging
+A0A2K9VGS2	1	tail
+M9NUS8	0	head and packaging
+M9NVD0	1	tail
+M9NUS9	1	tail
+M9NUT0	1	tail
+M9NT01	0	connector
+A4ZFA8	0	head and packaging
+A0A1P7WFW3	1	tail
+A0A1P7WG10	0	connector
+A0A1P7WG08	0	head and packaging
+B2ZNR4	0	head and packaging
+L7P7R0	0	head and packaging
+L7P847	1	tail
+Q9B0A2	1	tail
+Q9B096	1	tail
+Q9B092	1	tail
+Q4ZA02	0	head and packaging
+Q4ZA00	1	tail
+P03764	1	tail
+Q9B0A7	0	head and packaging
+Q9B0B0	0	head and packaging
+A0A345MFM5	0	connector
+A0ACD6BAR1	0	head and packaging
+A0AAE9C514	1	tail
+A0AAE8YF79	0	head and packaging
+A0AAE8YCM0	0	head and packaging
+K9L4F2	1	tail
+K9L3Y2	0	head and packaging
+K9L4E9	1	tail
+K9L3Y4	1	tail
+K9L5R4	1	tail
+K9L5R6	1	tail
+K9L3X8	0	unknown function
+K9L587	0	unknown function
+K9L5Q6	0	unknown function
+A0A2K9VK95	0	head and packaging
+A0A2K9VKD2	0	head and packaging
+A0A2K8IC08	0	head and packaging
+A0A2K8I3N9	0	head and packaging
+A0A5P1KV51	1	tail
+A0A5P1KVD4	0	unknown function
+A0A5P1KVB9	1	tail
+A0A5P1KV60	1	tail
+A0A5P1KVA6	1	tail
+A0A5P1KYR7	1	tail
+A0A5P1KVB7	0	head and packaging
+A0A2K9V5R5	1	tail
+A0A7I8V4E3	1	tail
+A0A2K9V618	1	tail
+A0A2K9V5Z4	1	tail
+A0A7T3TJP2	1	tail
+A0A2K9V5T6	1	tail
+A0A2K9V5T5	1	tail
+A0A2K9V5S8	1	tail
+A0A2K9V5R4	1	tail
+A0A2K9V5S7	1	tail
+A0A2K9V5S1	1	tail
+A0A2Z4QAY9	1	tail
+A0A2K9V5T9	1	tail
+A0A976LXP5	1	tail
+A0A5B9NKG2	1	tail
+A0A0U1WF63	1	tail
+A0A0U1UXD7	1	tail
+A0A0U1WGQ5	0	head and packaging
+A0A0U1WIJ9	1	tail
+Q4Z9Z7	0	head and packaging
+Q4Z9Z9	1	tail
+A0A0U1X2L4	0	head and packaging
+A0A0U1UXD6	0	unknown function
+Q0H263	0	head and packaging
+Q9T1V8	0	head and packaging
+A0A2H5BHF7	0	head and packaging
+A0A059PYA9	0	connector
+A0A059PY41	1	tail
+A0A059PY92	0	head and packaging
+A0ACD6BAP9	0	unknown function
+A0ACD6BAQ6	1	tail
+J7F9G3	0	head and packaging
+J7FA80	1	tail
+A0A410N6W4	0	unknown function
+A0A410N721	0	unknown function
+A0A410N6T6	0	unknown function
+A0A410N6X8	0	unknown function
+A0A410N6U0	0	unknown function
+A0A410N6U9	0	unknown function
+J9QEB7	0	unknown function
+J9QE70	1	tail
+J9QE72	1	tail
+Q6XQC4	1	tail
+A0A7S9SW18	1	tail
+A0A7S9SVZ9	1	tail
+A0A7S9SWG4	1	tail
+K9L596	1	tail
+K9L557	0	head and packaging
+A0A0A7RVH8	0	head and packaging
+A0A7S9SW10	0	head and packaging
+A0MZE1	0	head and packaging
+pdb:9LBN_1	0	head and packaging
+pdb:9LBM_1	0	head and packaging
+Q6XQB9	1	tail
+Q6XQD8	0	unknown function
+Q6XQD3	0	head and packaging
+A0ACD6BAQ2	0	head and packaging
+Q9T1V6	1	tail
+A0A7S9SVH6	1	tail
+A0A7S9XI21	1	tail
+A0A7S9SVI2	1	tail
+A0A291AXD4	0	head and packaging
+A7XXS1	0	unknown function
+A0AAE7VV46	1	tail
+A0AAE8B2A4	0	head and packaging
+pdb:9N71_1	0	unknown function
+A0AAE7VUU6	0	unknown function
+A0AAE7VVG7	0	head and packaging
+A0A7S9SVW9	1	tail
+A0A7S9SVT9	1	tail
+A0A7S9SW44	1	tail
+A0A7S9XHP4	1	tail
+A0A7S9XHN5	1	tail
+A0A346FJP3	0	head and packaging
+pdb:9ZD7_11	1	tail
+pdb:9ZBS_4	0	unknown function
+pdb:9ZBS_1	0	head and packaging
+A0AA49HID0	0	unknown function
+A0AA49HGR3	1	tail
+A0AA49HFY0	0	head and packaging
+A0AA49CM87	0	head and packaging
+A0AAE8B389	0	moron, auxiliary metabolic gene and host takeover
+J7F8Z3	0	unknown function
+J7F8X4	1	tail
+J7FAQ1	0	unknown function
+J7F8Z5	0	head and packaging
+Q9XJT3	0	head and packaging
+A0A291AXC6	1	tail
+A0A291AXC9	0	unknown function
+A0A8S5S2W5	0	unknown function
+A0A8S5S3F2	0	unknown function
+A0A8S5V860	0	unknown function
+P15316	0	other
