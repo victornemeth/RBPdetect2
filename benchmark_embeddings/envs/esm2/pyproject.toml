@@ -1,0 +1,12 @@
+[project]
+name = "rbpdetect2-benchmark-esm2"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "rbpdetect2",
+    "transformers>=4.51,<5",
+]
+
+[tool.uv.sources]
+rbpdetect2 = { path = "../../..", editable = true }
+

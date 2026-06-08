@@ -1,0 +1,23 @@
+{
+  "dataset_sha256": "c85c1d96255fe1442e1b1ead16069c7234dc55c52bfa0fc549d9b6a6db2881ba",
+  "device": "cuda:0",
+  "elapsed_seconds": 129.99252195842564,
+  "embedding_dim": 1280,
+  "embedding_dtype": "float32",
+  "gpu_name": "NVIDIA GeForce RTX 5060 Ti",
+  "input_kind": "amino_acid_sequence",
+  "long_sequence_policy": "non_overlapping_chunks_then_residue_weighted_mean",
+  "max_residues_per_chunk": 1022,
+  "model_dtype": "torch.bfloat16",
+  "model_id": "facebook/esm2_t33_650M_UR50D",
+  "model_key": "esm2-650m",
+  "n_sequences": 3154,
+  "peak_gpu_memory_bytes": 1578713088,
+  "pooling": "last_hidden_state_mean_over_residues",
+  "python_version": "3.12.3",
+  "requested_revision": null,
+  "resolved_revision": "08e4846e537177426273712802403f7ba8261b6c",
+  "schema_version": 1,
+  "torch_version": "2.12.0+cu130",
+  "transformers_version": "4.57.6"
+}

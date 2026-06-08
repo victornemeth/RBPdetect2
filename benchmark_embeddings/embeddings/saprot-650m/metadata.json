@@ -1,0 +1,23 @@
+{
+  "dataset_sha256": "e76f35d4860ca26127c75c5c5ec67b4245ceef4b7cf8943b2b6697f50e5db66a",
+  "device": "cuda:0",
+  "elapsed_seconds": 105.41140214726329,
+  "embedding_dim": 1280,
+  "embedding_dtype": "float32",
+  "gpu_name": "NVIDIA GeForce RTX 5060 Ti",
+  "input_kind": "saprot_interleaved_amino_acid_and_3di_sequence",
+  "long_sequence_policy": "non_overlapping_chunks_then_residue_weighted_mean",
+  "max_residues_per_chunk": 1022,
+  "model_dtype": "torch.bfloat16",
+  "model_id": "westlake-repl/SaProt_650M_AF2",
+  "model_key": "saprot-650m",
+  "n_sequences": 2893,
+  "peak_gpu_memory_bytes": 1580704768,
+  "pooling": "last_hidden_state_mean_over_residues",
+  "python_version": "3.12.3",
+  "requested_revision": null,
+  "resolved_revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+  "schema_version": 1,
+  "torch_version": "2.12.0+cu130",
+  "transformers_version": "4.57.6"
+}

@@ -11,7 +11,7 @@ def main() -> None:
     add_common_arguments(
         parser,
         default_model_id="facebook/esm2_t33_650M_UR50D",
-        default_output_dir="benchmarks/embeddings/esm2-650m",
+        default_output_dir="benchmark_embeddings/embeddings/esm2-650m",
     )
     args = parser.parse_args()
     run_hf_extractor(args, model_key="esm2-650m")

@@ -11,7 +11,7 @@ def main() -> None:
     add_common_arguments(
         parser,
         default_model_id="biohub/ESMC-6B",
-        default_output_dir="benchmarks/embeddings/esmc-6b",
+        default_output_dir="benchmark_embeddings/embeddings/esmc-6b",
     )
     args = parser.parse_args()
     run_hf_extractor(

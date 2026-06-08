@@ -1,0 +1,12 @@
+[project]
+name = "rbpdetect2-benchmark-esmc"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "rbpdetect2",
+    "esm @ git+https://github.com/Biohub/esm.git@f652b471d29da828b31e9b7a9cf7d0a7803240f5",
+]
+
+[tool.uv.sources]
+rbpdetect2 = { path = "../../..", editable = true }
+

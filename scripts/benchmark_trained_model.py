@@ -31,7 +31,7 @@ from rbpdetect2.benchmarking import (
 )
 
 ROOT = Path(__file__).resolve().parent.parent
-RESULTS = ROOT / "benchmarks" / "results"
+RESULTS = ROOT / "benchmark_embeddings" / "results"
 
 
 def main():

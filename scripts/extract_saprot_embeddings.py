@@ -13,7 +13,7 @@ def main() -> None:
     add_common_arguments(
         parser,
         default_model_id="westlake-repl/SaProt_650M_AF2",
-        default_output_dir="benchmarks/embeddings/saprot-650m",
+        default_output_dir="benchmark_embeddings/embeddings/saprot-650m",
     )
     parser.add_argument(
         "--sa-sequences",

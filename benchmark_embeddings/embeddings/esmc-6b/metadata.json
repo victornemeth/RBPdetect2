@@ -1,0 +1,23 @@
+{
+  "dataset_sha256": "c85c1d96255fe1442e1b1ead16069c7234dc55c52bfa0fc549d9b6a6db2881ba",
+  "device": "cuda:0",
+  "elapsed_seconds": 670.75792549178,
+  "embedding_dim": 2560,
+  "embedding_dtype": "float32",
+  "gpu_name": "NVIDIA GeForce RTX 5060 Ti",
+  "input_kind": "amino_acid_sequence",
+  "long_sequence_policy": "non_overlapping_chunks_then_residue_weighted_mean",
+  "max_residues_per_chunk": 1022,
+  "model_dtype": "torch.bfloat16",
+  "model_id": "biohub/ESMC-6B",
+  "model_key": "esmc-6b",
+  "n_sequences": 3154,
+  "peak_gpu_memory_bytes": 14139780608,
+  "pooling": "last_hidden_state_mean_over_residues",
+  "python_version": "3.12.3",
+  "requested_revision": null,
+  "resolved_revision": "45b0fa5d7fb06faefbd5e3b89bdcef35d564e79a",
+  "schema_version": 1,
+  "torch_version": "2.12.0+cu130",
+  "transformers_version": "4.57.6"
+}

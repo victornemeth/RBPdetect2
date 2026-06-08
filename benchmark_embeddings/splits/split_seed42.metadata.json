@@ -1,0 +1,9 @@
+{
+  "coverage": 0.8,
+  "dataset_sha256": "c85c1d96255fe1442e1b1ead16069c7234dc55c52bfa0fc549d9b6a6db2881ba",
+  "min_seq_id": 0.3,
+  "schema_version": 1,
+  "seed": 42,
+  "test_fraction": 0.15,
+  "val_fraction": 0.15
+}
